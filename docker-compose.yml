@@ -1,0 +1,11 @@
+services:
+  onionshare:
+    image: effraie/onionshare-cli:latest
+    container_name: onionshare-cli
+    volumes:
+      - /path/to/onionshare/files:/mnt
+      - /path/to/onionshare/tor_data:/mnt/tor_data
+    command: ${COMMAND}
+    network_mode: host
+    restart: unless-stopped
+networks: {}
